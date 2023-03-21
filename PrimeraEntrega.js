@@ -5,11 +5,13 @@ class ProductManager {
     }
   
     addProduct(product) {
-      if (!product.title || !product.description || !product.price || !product.code || !product.stock) {
-        throw new Error('Todos los campos son obligatorios');
+      if (!product.title || !product.description || !product.price || !product.thumbnail || !product.code || !product.stock) {
+        console.error('Todos los campos son obligatorios');
+        return;
       }
       if (this.products.some(p => p.code === product.code)) {
-        throw new Error(`El producto con el código ${product.code} ya existe en stock`);
+        console.error(`El producto con el código ${product.code} ya existe en stock`);
+        return;
       }
       const newProduct = {
         ...product,
@@ -37,6 +39,7 @@ const manager = new ProductManager();
 manager.addProduct({ 
   title: 'Samsung S23 Ultra',
   description: 'Descripción Samsung S23 Ultra',
+  thumbnail: "Sin imagen",
   price: 1300,
   code: '1',
   stock: 10
