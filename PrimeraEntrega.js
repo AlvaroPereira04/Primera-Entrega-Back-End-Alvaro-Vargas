@@ -34,15 +34,52 @@ class ProductManager {
     }
   }
 
-const manager = new ProductManager();
+  const testing = new ProductManager();
 
-manager.addProduct({ 
-  title: 'Samsung S23 Ultra',
-  description: 'Descripción Samsung S23 Ultra',
-  thumbnail: "Sin imagen",
-  price: 1300,
-  code: '1',
-  stock: 10
-   }); 
+  console.log(testing.getProducts());
+  
+  testing.addProduct({
+    title: 'Samsung S23 Ultra',
+    description: 'Descripción Samsung S23 Ultra',
+    thumbnail: 'sin imagen',
+    price: 1300,
+    code: 'abc123',
+    stock: 25,
+  });
+  
+  testing.addProduct({
+    title: 'Iphone 14 Pro Max',
+    description: 'Descripción Iphone 14 Pro Max',
+    price: 1500,
+    thumbnail: 'sin imagen',
+    code: 'abc1234',
+    stock: 225,
+  });
+  
+  testing.addProduct({
+    title: 'PS5',
+    description: 'Descripción PS5',
+    price: 600,
+    thumbnail: 'sin imagen',
+    code: 'abc12345',
+    stock: 500,
+  });
+  
+  testing.addProduct({
+    title: 'PS5',
+    description: 'Descripción PS5',
+    price: 600,
+    thumbnail: 'sin imagen',
+    code: 'abc12345',
+    stock: 500,
+  });
+  
+  const test1 = testing.getProducts();
+  console.log(test1);
+  
+  const test2 = testing.getProductById(5);
+  console.log(test2);
+  
+  const test3 = testing.getProductById(2);
+  console.log(test3);
 
-console.log(manager.products);
